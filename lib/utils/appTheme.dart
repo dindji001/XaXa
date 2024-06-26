@@ -24,8 +24,9 @@ class _Asset {
   final logo3 = "assets/Kub_Logo_HD_08.png";
   final logo4 = "assets/Kube_logo_white_04.png";
   final car = "assets/car.png";
-
+  final google = "assets/google.png";
+  final apple = "assets/apple.png";
+  final facebook = "assets/facebook.png";
 }
 
-class _AssetSvg {
-}
+class _AssetSvg {}

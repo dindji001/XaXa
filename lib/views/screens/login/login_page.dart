@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kub_app/utils/appTheme.dart';
+import 'package:kub_app/views/widgets/button.dart';
 import 'package:kub_app/views/widgets/textField.dart';
+
+import '../../../utils/navigation_service.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -12,7 +15,7 @@ class LoginPage extends StatelessWidget {
       body: Column(
         children: [
           SizedBox(
-            height: 450,
+            height: 350,
             child: Stack(
               children: [
                 Container(
@@ -71,31 +74,126 @@ class LoginPage extends StatelessWidget {
             child: Column(
               children: [
                 TextFormField(
-              decoration: InputDecoration(
-                filled: true,
-                suffixIcon: Icon(
-                  Icons.remove_red_eye,
-                  color: AppTheme.color.backgroundTextFieldBordu,
+                  decoration: InputDecoration(
+                    filled: true,
+                    hintText: "Saisissez un numéro de telephone ou une...",
+                    hintStyle: TextStyle(
+                      color: Color(0XffD9D9D9),
+                      fontSize: 14,
+                    ),
+                    fillColor: AppTheme.color.backgroundTextField,
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    contentPadding: EdgeInsets.symmetric(
+                      vertical: 15,
+                    ),
+                  ),
                 ),
-                prefixIcon: Icon(
-                  Icons.lock,
-                  color: AppTheme.color.backgroundTextFieldBordu,
+                SizedBox(
+                  height: 10,
                 ),
-                hintText: "Nouveau mot de passe",
-                hintStyle: TextStyle(
-                  color: Color(0XffD9D9D9),
-                  fontSize: 14,
-                ),
-                fillColor: AppTheme.color.backgroundTextField,
-                border: OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                contentPadding: EdgeInsets.symmetric(
-                  vertical: 15,
-                ),
-              ),
-            ),
+                CButton(title: 'Continuer', onPressed: () {}),
+                Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          height: 2,
+                          width: (width(context) / 2) - 30,
+                          decoration: BoxDecoration(
+                            color: AppTheme.color.backgroundTextField,
+                          ),
+                        ),
+                        Text(
+                          "Ou",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w300,
+                            fontSize: 14,
+                            color: AppTheme.color.backgroundTextField,
+                          ),
+                        ),
+                        Container(
+                          height: 2,
+                          width: (width(context) / 2) - 30,
+                          decoration: BoxDecoration(
+                            color: AppTheme.color.backgroundTextField,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                          height: 60,
+                          width: 60,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(40),
+                            border: Border.all(
+                              color: AppTheme.color.primaryColor,
+                              width: 2,
+                            ),
+                            color: AppTheme.color.backgroundTextField2,
+                          ),
+                          child: Center(
+                            child: Image.asset(
+                              AppTheme.asset.google,
+                              width: 40.0,
+                              height: 40.0,
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 60,
+                          width: 60,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(40),
+                            border: Border.all(
+                              color: AppTheme.color.primaryColor,
+                              width: 2,
+                            ),
+                            color: AppTheme.color.backgroundTextField2,
+                          ),
+                          child: Center(
+                            child: Image.asset(
+                              AppTheme.asset.apple,
+                              width: 40.0,
+                              height: 40.0,
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 60,
+                          width: 60,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(40),
+                            border: Border.all(
+                              color: AppTheme.color.primaryColor,
+                              width: 2,
+                            ),
+                            color: AppTheme.color.backgroundTextField2,
+                          ),
+                          child: Center(
+                            child: Image.asset(
+                              AppTheme.asset.facebook,
+                              width: 40.0,
+                              height: 40.0,
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+                        )
+                      ],
+                    )
+                  ],
+                )
               ],
             ),
           )
