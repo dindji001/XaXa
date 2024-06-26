@@ -4,6 +4,7 @@ import '../../utils/appTheme.dart';
 import '../../utils/navigation_service.dart';
 import '../widgets/button.dart';
 import 'login/login_page.dart';
+import 'register/register_page.dart';
 
 class FirstPage extends StatelessWidget {
   const FirstPage({super.key});
@@ -19,7 +20,7 @@ class FirstPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
-                height: height(context) * 0.55,
+                height: height(context) * 0.5,
                 width: width(context),
                 decoration: BoxDecoration(
                   image: DecorationImage(
@@ -81,6 +82,7 @@ class FirstPage extends StatelessWidget {
                   ],
                 ),
               ),
+              SizedBox(height: 30,),
               Column(
                 children: [
                   CButton(
@@ -90,6 +92,7 @@ class FirstPage extends StatelessWidget {
                     width: width(context) - 10,
                     color: AppTheme.color.secondaryColor,
                     onPressed: () {
+                      routeAnimation(context, RegisterPage());
                       print('######################################');
                     },
                   ),

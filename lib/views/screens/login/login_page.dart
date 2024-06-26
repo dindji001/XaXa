@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kub_app/utils/appTheme.dart';
@@ -46,27 +47,29 @@ class LoginPage extends StatelessWidget {
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: [
-                RichText(
-                  text: TextSpan(
-                    style: TextStyle(
-                      color: AppTheme.color.whithColor,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 16,
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  RichText(
+                    text: TextSpan(
+                      style: TextStyle(
+                        color: AppTheme.color.whithColor,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16,
+                      ),
+                      children: [
+                        TextSpan(
+                            text: 'Connectez vous a votre compte KUB ',
+                            style: TextStyle(
+                                color: AppTheme.color.primaryColor,
+                                fontSize: 24)),
+                      ],
                     ),
-                    children: [
-                      TextSpan(
-                          text: 'Creer un compte KUB ',
-                          style: TextStyle(
-                              color: AppTheme.color.primaryColor,
-                              fontSize: 24)),
-                    ],
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
           Padding(
@@ -94,7 +97,10 @@ class LoginPage extends StatelessWidget {
                 SizedBox(
                   height: 10,
                 ),
-                CButton(title: 'Continuer', onPressed: () {}),
+                CButton(title: 'Connexion', onPressed: () {}),
+                 SizedBox(
+                      height: 50,
+                    ),
                 Column(
                   children: [
                     Row(
@@ -191,7 +197,35 @@ class LoginPage extends StatelessWidget {
                           ),
                         )
                       ],
-                    )
+                    ), SizedBox(height: 30,),
+
+                    RichText(
+                      text: TextSpan(
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: AppTheme
+                                .color.textColor), // Style du texte par défaut
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: 'Vous n\'avez pas de compte? ',
+                            style: TextStyle(color: AppTheme.color.textColor),
+                          ),
+                          TextSpan(
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                // Rediriger l'utilisateur vers la page LoginPage
+                                route(
+                                  context,
+                                  LoginPage(),
+                                ); // Assurez-vous d'avoir la gestion de la navigation avec GetX
+                              },
+                            text: 'Inscrivez-vous',
+                            style:
+                                TextStyle(color: AppTheme.color.primaryColor),
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 )
               ],
