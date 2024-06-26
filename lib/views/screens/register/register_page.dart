@@ -219,7 +219,7 @@ class RegisterPage extends StatelessWidget {
                                 // Rediriger l'utilisateur vers la page LoginPage
                                 route(
                                   context,
-                                  RegisterPage(),
+                                  LoginPage(),
                                 ); // Assurez-vous d'avoir la gestion de la navigation avec GetX
                               },
                             text: 'Connecter-vous',

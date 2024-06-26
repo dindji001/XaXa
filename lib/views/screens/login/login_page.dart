@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kub_app/utils/appTheme.dart';
+import 'package:kub_app/views/screens/register/register_page.dart';
 import 'package:kub_app/views/widgets/button.dart';
 import 'package:kub_app/views/widgets/textField.dart';
 
@@ -216,7 +217,7 @@ class LoginPage extends StatelessWidget {
                                 // Rediriger l'utilisateur vers la page LoginPage
                                 route(
                                   context,
-                                  LoginPage(),
+                                  RegisterPage(),
                                 ); // Assurez-vous d'avoir la gestion de la navigation avec GetX
                               },
                             text: 'Inscrivez-vous',
